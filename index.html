@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجمع الأخبار العربي - آخر الأخبار لحظة بلحظة</title>
+    <meta name="description" content="موقع يجمع أخبار العالم العربي من أهم المصادر الإخبارية">
+    
+    <!-- الخطوط العربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- أنماطنا -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5539/5539956.png">
+</head>
+<body>
+    <!-- شريط الأخبار العاجلة المتحرك -->
+    <div class="breaking-news">
+        <div class="breaking-label">
+            <i class="fas fa-bolt"></i>
+            عاجل
+        </div>
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <div class="ticker-item">جارٍ تحميل الأخبار العاجلة...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الهيدر -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-newspaper"></i>
+                <h1>مجمع الأخبار</h1>
+                <span class="tagline">نافذتك على العالم</span>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#" class="active" data-category="all"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="#" data-category="breaking"><i class="fas fa-bolt"></i> عاجل</a></li>
+                    <li><a href="#" data-category="local"><i class="fas fa-map-marker-alt"></i> محلي</a></li>
+                    <li><a href="#" data-category="arabic"><i class="fas fa-globe-asia"></i> عربي</a></li>
+                    <li><a href="#" data-category="international"><i class="fas fa-globe-americas"></i> دولي</a></li>
+                    <li><a href="#" data-category="sports"><i class="fas fa-futbol"></i> رياضة</a></li>
+                    <li><a href="#" data-category="economy"><i class="fas fa-chart-line"></i> اقتصاد</a></li>
+                    <li><a href="#" data-category="tech"><i class="fas fa-microchip"></i> تقنية</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="container main-content">
+        <!-- قسم البطل (Hero) -->
+        <section class="hero-section">
+            <div class="main-news">
+                <div class="featured-news">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="خبر رئيسي" id="mainNewsImage">
+                        <span class="news-badge" id="mainNewsCategory">عاجل</span>
+                    </div>
+                    <div class="news-content">
+                        <h2 id="mainNewsTitle">جارٍ تحميل الخبر الرئيسي...</h2>
+                        <p id="mainNewsDesc">يتم الآن جلب أحدث الأخبار من مختلف المصادر العربية والعالمية.</p>
+                        <div class="news-meta">
+                            <span id="mainNewsSource"><i class="fas fa-newspaper"></i> مجمع الأخبار</span>
+                            <span id="mainNewsTime"><i class="fas fa-clock"></i> الآن</span>
+                        </div>
+                        <a href="#" class="read-more" id="mainNewsLink">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+                
+                <div class="side-news">
+                    <h3><i class="fas fa-fire"></i> أهم الأخبار</h3>
+                    <div id="sideNewsContainer">
+                        <!-- سيتم ملؤها بالجافاسكريبت -->
+                        <div class="side-news-item loading">
+                            <div class="side-image"></div>
+                            <div class="side-content">
+                                <h4>جارٍ التحميل...</h4>
+                                <p>يتم جلب أحدث الأخبار</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- المحتوى الرئيسي -->
+        <section class="content-section">
+            <div class="news-grid">
+                <!-- العمود الأوسط (الأخبار الرئيسية) -->
+                <div class="main-column">
+                    <div class="section-header">
+                        <h2><i class="fas fa-list"></i> آخر الأخبار</h2>
+                        <div class="news-count" id="newsCount">0 أخبار</div>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <button class="filter-btn active" data-sort="latest">الأحدث</button>
+                        <button class="filter-btn" data-sort="popular">الأكثر قراءة</button>
+                        <button class="filter-btn" data-sort="oldest">الأقدم</button>
+                    </div>
+                    
+                    <div id="newsContainer" class="news-container">
+                        <!-- سيتم ملؤها بالجافاسكريبت -->
+                        <div class="loading-news">
+                            <div class="loader"></div>
+                            <p>جارٍ تحميل الأخبار...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- العمود الجانبي -->
+                <div class="sidebar">
+                    <!-- المصادر -->
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-newspaper"></i> المصادر</h3>
+                        <div class="sources-list" id="sourcesList">
+                            <!-- سيتم ملؤها بالجافاسكريبت -->
+                        </div>
+                    </div>
+                    
+                    <!-- الأكثر تداولاً -->
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-chart-line"></i> الأكثر تداولاً</h3>
+                        <div class="trending-list" id="trendingList">
+                            <!-- سيتم ملؤها بالجافاسكريبت -->
+                        </div>
+                    </div>
+                    
+                    <!-- الفئات -->
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-tags"></i> الفئات</h3>
+                        <div class="categories-list">
+                            <a href="#" data-category="all" class="category-tag">الكل <span>25</span></a>
+                            <a href="#" data-category="breaking" class="category-tag">عاجل <span>5</span></a>
+                            <a href="#" data-category="local" class="category-tag">محلي <span>8</span></a>
+                            <a href="#" data-category="arabic" class="category-tag">عربي <span>12</span></a>
+                            <a href="#" data-category="international" class="category-tag">دولي <span>7</span></a>
+                            <a href="#" data-category="sports" class="category-tag">رياضة <span>9</span></a>
+                            <a href="#" data-category="economy" class="category-tag">اقتصاد <span>6</span></a>
+                            <a href="#" data-category="tech" class="category-tag">تقنية <span>4</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>مجمع الأخبار</h3>
+                    <p>منصة إخبارية عربية تجمع آخر الأخبار من مختلف المصادر الموثوقة في العالم العربي والعالم.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> عن الموقع</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الخصوصية</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> اتصل بنا</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> أعلن معنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>مصادرنا</h3>
+                    <ul class="sources-footer">
+                        <li><i class="fas fa-circle"></i> الجزيرة</li>
+                        <li><i class="fas fa-circle"></i> العربية</li>
+                        <li><i class="fas fa-circle"></i> رويترز</li>
+                        <li><i class="fas fa-circle"></i> وكالة الأنباء السعودية</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>اشترك في النشرة الإخبارية</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                        <button type="submit">اشترك <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 مجمع الأخبار. جميع الحقوق محفوظة.</p>
+                <p>تم التطوير باستخدام HTML, CSS, JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- تحميل الجافاسكريبت -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
